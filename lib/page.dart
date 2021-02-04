@@ -64,11 +64,12 @@ class LinkButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final buttonWidth = MediaQuery.of(context).size.width * 0.95;
+    final width = MediaQuery.of(context).size.width;
+    final buttonWidth = width * 0.95;
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: Container(
-        width: buttonWidth,
+        width: width > 600 ? 600 : buttonWidth,
         child: FlatButton(
           padding: EdgeInsets.symmetric(vertical: 20),
           onPressed: () => launch(url),
