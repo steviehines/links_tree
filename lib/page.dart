@@ -22,13 +22,23 @@ class LandingPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 12),
             child: Text('@orientedObject'),
           ),
-          LinkButton(title: 'Tweet', url: 'https://twitter.com/oriented0bject'),
+          LinkButton(
+              title: 'Twitter', url: 'https://twitter.com/oriented0bject'),
           Spacer(flex: 1),
-          LinkButton(title: 'Tweet', url: 'https://twitter.com/oriented0bject'),
+          LinkButton(
+              title: 'LinkedIn',
+              url: 'https://www.linkedin.com/in/steve-hines-6567aa1b8/'),
           Spacer(flex: 1),
-          LinkButton(title: 'Tweet', url: 'https://twitter.com/oriented0bject'),
+          LinkButton(
+              title: 'Instagram',
+              url: 'https://www.instagram.com/i_am_stevie_hines/'),
           Spacer(flex: 1),
-          LinkButton(title: 'Tweet', url: 'https://twitter.com/oriented0bject'),
+          LinkButton(title: 'Github', url: 'https://github.com/steviehines'),
+          Spacer(flex: 1),
+          LinkButton(
+              title: 'Youtube',
+              url:
+                  'https://www.youtube.com/playlist?list=PLc28pWsr1QrOkXkGwbw2Fw-EPmK089toN'),
           Spacer(flex: 10),
           Row(
             mainAxisSize: MainAxisSize.min,
