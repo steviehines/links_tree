@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -6,58 +8,67 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Column(
-        children: [
-          SizedBox(height: 35),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(40),
-            child: FadeInImage.memoryNetwork(
-                height: 96,
-                width: 96,
-                placeholder: kTransparentImage,
-                image:
-                    'https://pbs.twimg.com/profile_images/1303979923812556800/zltWpuBp_400x400.jpg'),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12),
-            child: Text('@orientedObject'),
-          ),
-          LinkButton(
-              title: 'Twitter', url: 'https://twitter.com/oriented0bject'),
-          Spacer(flex: 1),
-          LinkButton(
-              title: 'LinkedIn',
-              url: 'https://www.linkedin.com/in/steve-hines-6567aa1b8/'),
-          Spacer(flex: 1),
-          LinkButton(
-              title: 'Instagram',
-              url: 'https://www.instagram.com/i_am_stevie_hines/'),
-          Spacer(flex: 1),
-          LinkButton(title: 'Github', url: 'https://github.com/steviehines'),
-          Spacer(flex: 1),
-          LinkButton(
-              title: 'Youtube',
-              url:
-                  'https://www.youtube.com/playlist?list=PLc28pWsr1QrOkXkGwbw2Fw-EPmK089toN'),
-          Spacer(flex: 10),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                'Made In Flutter',
-                style: TextStyle(fontSize: 15),
-              ),
-              SizedBox(width: 7),
-              FadeInImage.memoryNetwork(
-                  height: 25,
-                  width: 25,
+      child: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/back.jpg'),
+                fit: BoxFit.fitHeight)),
+        child: Column(
+          children: [
+            SizedBox(height: 35),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(40),
+              child: FadeInImage.memoryNetwork(
+                  height: 96,
+                  width: 96,
                   placeholder: kTransparentImage,
                   image:
-                      'https://www.didierboelens.com/images/blog/hummingbird_logo.png')
-            ],
-          ),
-          SizedBox(height: 23)
-        ],
+                      'https://pbs.twimg.com/profile_images/1303979923812556800/zltWpuBp_400x400.jpg'),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              child: Text(
+                '@orientedObject',
+                style: TextStyle(fontFamily: 'Ubuntu'),
+              ),
+            ),
+            LinkButton(
+                title: 'Twitter', url: 'https://twitter.com/oriented0bject'),
+            Spacer(flex: 1),
+            LinkButton(
+                title: 'LinkedIn',
+                url: 'https://www.linkedin.com/in/steve-hines-6567aa1b8/'),
+            Spacer(flex: 1),
+            LinkButton(
+                title: 'Instagram',
+                url: 'https://www.instagram.com/i_am_stevie_hines/'),
+            Spacer(flex: 1),
+            LinkButton(title: 'Github', url: 'https://github.com/steviehines'),
+            Spacer(flex: 1),
+            LinkButton(
+                title: 'Youtube',
+                url:
+                    'https://www.youtube.com/playlist?list=PLc28pWsr1QrOkXkGwbw2Fw-EPmK089toN'),
+            Spacer(flex: 10),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'Made In Flutter',
+                  style: TextStyle(fontSize: 15),
+                ),
+                SizedBox(width: 7),
+                FadeInImage.memoryNetwork(
+                    height: 25,
+                    width: 25,
+                    placeholder: kTransparentImage,
+                    image:
+                        'https://www.didierboelens.com/images/blog/hummingbird_logo.png')
+              ],
+            ),
+            SizedBox(height: 23)
+          ],
+        ),
       ),
     );
   }
@@ -87,7 +98,7 @@ class LinkButton extends StatelessWidget {
             title,
             style: TextStyle(color: Colors.white),
           ),
-          color: Colors.green[600],
+          color: Colors.brown,
         ),
       ),
     );

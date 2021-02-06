@@ -12,9 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Stevie',
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-      ),
+      theme: ThemeData(primarySwatch: Colors.amber, fontFamily: 'Ubuntu'),
       home: LandingPage(),
     );
   }
