@@ -17,13 +17,13 @@ class LandingPage extends StatelessWidget {
           children: [
             SizedBox(height: 35),
             ClipRRect(
-              borderRadius: BorderRadius.circular(40),
+              borderRadius: BorderRadius.circular(255),
               child: FadeInImage.memoryNetwork(
                   height: 96,
                   width: 96,
                   placeholder: kTransparentImage,
                   image:
-                      'https://pbs.twimg.com/profile_images/1303979923812556800/zltWpuBp_400x400.jpg'),
+                      'https://pbs.twimg.com/profile_images/1120994736523837440/SXM3Ceue_400x400.jpg'),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12),
@@ -90,6 +90,18 @@ class LinkButton extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.bottomLeft,
+            end: Alignment(8, 8),
+            colors: [
+              const Color(0xff5d4034),
+              const Color(0xffd7ccc8),
+            ],
+            // tileMode: TileMode.repeated
+          ),
+          // Gradient.linear(0.0, 20.0, 0x94716B, 0xB79891),
+        ),
         width: width > 600 ? 600 : buttonWidth,
         child: FlatButton(
           padding: EdgeInsets.symmetric(vertical: 20),
@@ -98,7 +110,7 @@ class LinkButton extends StatelessWidget {
             title,
             style: TextStyle(color: Colors.white),
           ),
-          color: Colors.brown,
+          // color: Colors.brown,
         ),
       ),
     );
