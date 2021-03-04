@@ -21,6 +21,12 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+def keystoreProperties = new Properties()
+   def keystorePropertiesFile = rootProject.file('key.properties')
+   if (keystorePropertiesFile.exists()) {
+       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   }
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
@@ -37,9 +43,19 @@ android {
         applicationId "com.example.links_tree"
         minSdkVersion 16
         targetSdkVersion 30
+        multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
+
+    signingConfigs {
+       release {
+           keyAlias keystoreProperties['keyRSA']
+           keyPassword keystoreProperties['android']
+           storeFile keystoreProperties['/home/orientobj/key.jks'] ? file(keystoreProperties['/home/orientobj/key.jks']) : null
+           storePassword keystoreProperties['android']
+       }
+   }
 
     buildTypes {
         release {
@@ -56,4 +72,11 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.android.material:material:1.3.0'
+
+    // implementation platform('com.google.firebase:firebase-bom:26.5.0')
 }
+
+apply plugin: 'com.google.gms.google-services'
