@@ -30,6 +30,7 @@ class _MyAppState extends State<MyApp> {
     //Upload document to FireStore
     final refUser = FirebaseFirestore.instance.collection('auser').doc();
     await refUser.set({'username': 'AleX'});
+
     //Upload file to Firebase Storage
     final response = await http.get(
         'https://pbs.twimg.com/profile_images/1120994736523837440/SXM3Ceue_400x400.jpg');
