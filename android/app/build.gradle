@@ -40,7 +40,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.stevie.links_tree"
+        applicationId "com.example.links_tree"
         minSdkVersion 16
         targetSdkVersion 30
         multiDexEnabled true
